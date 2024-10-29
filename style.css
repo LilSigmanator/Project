@@ -1,0 +1,137 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    /* Light background */
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #343a40;
+    /* Dark header */
+    color: white;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #007bff;
+    /* Blue bottom border */
+}
+
+.nav-link {
+    color: #007bff;
+    /* Link color */
+    padding: 10px 15px;
+    /* Increased padding */
+}
+
+.nav-link:hover {
+    background-color: #e2e6ea;
+    /* Light hover effect */
+    border-radius: 5px;
+    /* Rounded corners on hover */
+}
+
+.nav-item.active .nav-link {
+    font-weight: bold;
+    /* Bold active link */
+    color: #fff;
+    /* White text for active link */
+    background-color: #007bff;
+    /* Blue background for active link */
+    border-radius: 5px;
+    /* Rounded corners for active link */
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+    background-color: white;
+    /* White background for sections */
+    padding: 15px;
+    border-radius: 5px;
+    /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #343a40;
+    /* Dark footer */
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.definitions{
+    font-style: oblique;
+}
+.mission-statement{
+    font-size:20px;
+}
+.pricing-card {
+    border: 1px solid #007BFF; /* Main color for the border */
+    border-radius: 8px; /* Rounded corners */
+    margin-bottom: 20px; /* Space between cards */
+    transition: transform 0.3s; /* Smooth scale transition */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* Subtle shadow */
+}
+
+.pricing-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.card-header {
+    background-color: #007BFF; /* Main color for header */
+    color: white; /* Text color */
+    text-align: center; /* Center text */
+}
+
+.card-body {
+    text-align: center; /* Center text */
+}
+
+.card-body h2 {
+    font-size: 2rem; /* Font size for the price */
+    margin: 10px 0; /* Margin around the price */
+}
+
+.card-body ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    text-align: left; /* Align text to the left for better readability */
+}
+
+.card-body ul li {
+    margin: 10px 0; /* Space between list items */
+    padding: 8px; /* Padding around each feature */
+    background-color: #f8f9fa; /* Light background for each feature */
+    border-radius: 4px; /* Slightly rounded corners */
+    transition: background-color 0.3s; /* Smooth background change */
+    color: #007BFF; /* Blue text color */
+}
+
+.card-body ul li:hover {
+    background-color: #007BFF; /* Change background color on hover */
+    color: white; /* Change text color on hover to white */
+}
+
+.card-body ul li strong {
+    color: #000000; /* Color for feature titles */
+}
