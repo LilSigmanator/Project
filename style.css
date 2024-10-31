@@ -254,3 +254,11 @@ footer {
     text-align: left; /* Keep the text left-aligned within the box */
 }
 
+/* Existing CSS here... */
+
+/* Customize hover effect for the button */
+.nav-item .btn:hover {
+    background-color: #e2e6ea; /* Match the hover color of your links */
+    color: #007bff; /* Blue text color for contrast */
+    border-radius: 5px; /* Rounded corners on hover */
+}

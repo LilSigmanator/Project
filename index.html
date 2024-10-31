@@ -11,6 +11,75 @@
         crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script>
+        let isChinese=false;
+        function toggleLanguage() {
+            var toggleButton = document.getElementById('toggleButton');
+            const missionStatements = document.querySelectorAll('.mission-statement');
+            var missionStatementHTwo = document.getElementById('MissionStatementId');
+            var dictionBS = document.getElementById('navbarDropdown');
+
+            if (isChinese) {
+                // Change back to English
+                toggleButton.innerHTML="Change Text To Chinese"
+                dictionBS.innerText = 'Dictionary';
+                missionStatementHTwo.innerHTML = "Mission Statement";
+                document.querySelector('h1').innerText = 'Home';
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    if (link.innerText === '字典') link.innerText = 'Dictionary';
+                    if (link.innerText === '定价') link.innerText = 'Pricing';
+                    if (link.innerText === '联系') link.innerText = 'Contact';
+                    if (link.innerText === '首页') link.innerText = 'Home'; // Change back Home
+                    if (link.innerText === '页面') link.innerText = 'Pages'; // Change back Pages
+                });
+
+                // Update dropdown items
+                document.querySelectorAll('.dropdown-item').forEach(item => {
+                    if (item.innerText === '词语/短语') item.innerText = 'Words/Phrases';
+                    if (item.innerText === '缩写') item.innerText = 'Abbreviations';
+                });
+
+                document.querySelector('footer p').innerText = '© 2024 Paxton. All rights reserved.';
+
+                missionStatements[0].innerHTML = `At <span style="font-style:italic">The Brainrot Dictionary</span>, our mission is to empower parents and caregivers by providing clear and accessible explanations of modern slang terms, fostering understanding between generations. We believe that effective communication is the cornerstone of healthy relationships, and we aim to eliminate language barriers that can create misunderstandings between children and adults.`;
+
+                missionStatements[1].innerHTML = `Through our comprehensive slang dictionary, educational resources, and engaging content, we strive to create a supportive community where parents can confidently engage with their children’s language. We are committed to delivering accurate, reliable information in an inviting and user-friendly manner, ensuring that everyone can decode and appreciate the evolving landscape of contemporary communication.`;
+
+              
+            } else {
+                // Change to Chinese
+                toggleButton.innerHTML="切换文本为英语"
+                dictionBS.innerText = '字典';
+                missionStatementHTwo.innerHTML = "使命声明";
+                document.querySelector('h1').innerText = '首页';
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    if (link.innerText === 'Dictionary') link.innerText = '字典';
+                    if (link.innerText === 'Pricing') link.innerText = '定价';
+                    if (link.innerText === 'Contact') link.innerText = '联系';
+                    if (link.innerText === 'Home') link.innerText = '首页'; // Change to 首页
+                    if (link.innerText === 'Pages') link.innerText = '页面'; // Change to 页面
+                });
+
+                // Update dropdown items
+                document.querySelectorAll('.dropdown-item').forEach(item => {
+                    if (item.innerText === 'Words/Phrases') item.innerText = '词语/短语';
+                    if (item.innerText === 'Abbreviations') item.innerText = '缩写';
+                });
+
+                document.querySelector('footer p').innerText = '© 2024 Paxton。保留所有权利。';
+
+                missionStatements[0].innerHTML = `在《脑腐字典》，我们的使命是通过提供清晰易懂的现代俚语解释，赋能父母和看护者，促进代际间的理解。我们相信，有效的沟通是健康关系的基石，我们的目标是消除可能导致儿童与成人之间误解的语言障碍。`;
+
+                missionStatements[1].innerHTML = `通过我们全面的俚语字典、教育资源和引人入胜的内容，我们努力创造一个支持性的社区，父母可以在这里自信地与孩子的语言交流。我们致力于以友好和用户友好的方式提供准确、可靠的信息，确保每个人都能解码并欣赏当代交流的不断发展。`;
+
+          
+            }
+            isChinese = !isChinese;
+        }
+
+    </script>
+
+
 </head>
 
 <body>
@@ -19,7 +88,7 @@
     </header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Pages</a>
+            <a class="navbar-brand nav-link" href="#">Pages</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -27,16 +96,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link " href="index.html">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        <a class="dropdown-toggle nav-link" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Dictionary
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="dictionary.html">Words/Phrases</a></li>
-                            <li><a class="dropdown-item" href="abs.html">Abbreviations</a></li>
+                            <li><a class="dropdown-item nav-link" href="dictionary.html">Words/Phrases</a></li>
+                            <li><a class="dropdown-item nav-link" href="abs.html">Abbreviations</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -45,33 +114,36 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
+                    <li class="nav-item">
+                        <button id="toggleButton" onclick="toggleLanguage()"
+                            class="nav-link btn btn-primary ms-2">Change Text to Chinese</button>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
 
-
     <main>
         <section>
-            <h2>Mission Statement</h2>
-            <img src="https://th.bing.com/th/id/OIP.F6tb7Q4S-QsXZLDj4utIUwHaFn?rs=1&pid=ImgDetMain">
-            <div class="contaier col-sm-4">
-                <h3 class="mission-statement">At <span style="font-style:italic">The Brainrot Dictionary</span>, our
-                    mission is to empower parents and caregivers by providing clear and
-                    accessible explanations of modern slang terms, fostering understanding between generations. We
-                    believe
-                    that effective communication is the cornerstone of healthy relationships, and we aim to eliminate
-                    language barriers that can create misunderstandings between children and adults.
-                </h3>
-                <br>
-                <h3 class="mission-statement">Through our comprehensive slang dictionary, educational resources, and
-                    engaging content, we strive to
-                    create a supportive community where parents can confidently engage with their children’s language.
-                    We
-                    are committed to delivering accurate, reliable information in an inviting and user-friendly manner,
-                    ensuring that everyone can decode and appreciate the evolving landscape of contemporary
-                    communication.</h3>
+            <h2 id="MissionStatementId">Mission Statement</h2>
+            <div class="d-flex align-items-start">
+                <img src="https://th.bing.com/th/id/OIP.F6tb7Q4S-QsXZLDj4utIUwHaFn?rs=1&pid=ImgDetMain"
+                    class="img-fluid me-3" alt="Mission Image" style="max-width: 400px;">
+                <div class="container col-sm-8">
+                    <h3 class="mission-statement">At <span style="font-style:italic">The Brainrot Dictionary</span>, our
+                        mission is to empower parents and caregivers by providing clear and accessible explanations of
+                        modern slang terms, fostering understanding between generations. We believe that effective
+                        communication is the cornerstone of healthy relationships, and we aim to eliminate language
+                        barriers that can create misunderstandings between children and adults.
+                    </h3>
+                    <br>
+                    <h3 class="mission-statement">Through our comprehensive slang dictionary, educational resources, and
+                        engaging content, we strive to create a supportive community where parents can confidently
+                        engage with their children’s language. We are committed to delivering accurate, reliable
+                        information in an inviting and user-friendly manner, ensuring that everyone can decode and
+                        appreciate the evolving landscape of contemporary communication.</h3>
+                </div>
             </div>
         </section>
     </main>
