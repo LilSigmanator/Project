@@ -163,3 +163,94 @@ footer {
     /* Color for feature titles */
 }
 
+/* Additional Styles for Abbreviations Page */
+.abbreviations {
+    padding: 20px;
+    /* Add padding around the entire section */
+}
+
+/* Abbreviation Card Styles */
+.abbreviation-card {
+    margin-bottom: 20px;
+    /* Space between cards */
+}
+
+/* Abbreviation Headings */
+.abbreviation-title {
+    font-size: 1.5rem;
+    /* Larger font for abbreviations */
+    margin-bottom: 10px;
+    /* Space below each heading */
+    color: #007bff;
+    /* Blue color for headings */
+}
+
+/* Paragraph Styles */
+.abbreviation-definition {
+    font-size: 1rem;
+    /* Standard font size for definitions */
+    margin-bottom: 15px;
+    /* Space below each paragraph */
+    color: #333;
+    /* Darker text color for better readability */
+}
+
+/* Card Styles for Abbreviations */
+.abbreviation-card .col-sm-4 {
+    background-color: #f8f9fa;
+    /* Light background for each abbreviation card */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 15px;
+    /* Padding inside each card */
+    transition: box-shadow 0.3s;
+    /* Smooth shadow transition */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+}
+
+.abbreviation-card .col-sm-4:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Enhanced shadow on hover */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 576px) {
+    .abbreviation-title {
+        font-size: 1.25rem;
+        /* Adjust heading size on small screens */
+    }
+
+    .abbreviation-definition {
+        font-size: 0.9rem;
+        /* Adjust paragraph size on small screens */
+    }
+}
+.definitions-section {
+    margin: 20px 0;
+}
+
+.definition-card {
+    margin-bottom: 30px;
+    text-align: center; /* Center content within the card */
+    padding: 15px; /* Add padding for better spacing */
+    background-color: #ffffff; /* White background for clarity */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.definition-title {
+    font-size: 1.8em; /* Slightly larger font size */
+    color: #222; /* Darker color for better contrast */
+    font-weight: bold; /* Bold text for emphasis */
+    margin-bottom: 10px;
+}
+
+.definition-text {
+    font-size: 1.1em; /* Increased font size */
+    color: #333; /* Darker color for better readability */
+    line-height: 1.6;
+    padding: 10px;
+    text-align: left; /* Keep the text left-aligned within the box */
+}
+
